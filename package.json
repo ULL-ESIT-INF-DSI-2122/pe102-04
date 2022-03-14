@@ -7,8 +7,7 @@
     "start": "tsc-watch --onSuccess \"node dist/index.js\"",
     "ejer1": "tsc-watch --onSuccess \"node dist/ejercicio1.js\"",
     "ejer2": "tsc-watch --onSuccess \"node dist/ejercicio2.js\"",
-    "modi1": "tsc-watch --onSuccess \"node dist/modi1.js\"",
-    "modi2": "tsc-watch --onSuccess \"node dist/modi2.js\"",
+    "modi": "tsc-watch --onSuccess \"node dist/modi.js\"",
     "doc": "typedoc",
     "test": "mocha"
   },
