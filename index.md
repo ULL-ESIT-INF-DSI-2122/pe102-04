@@ -56,10 +56,70 @@ Para los test se han comprobado las clases únicamente. Se han creado 3 Pokémon
 
 En el caso de la **clase Pokémon** introducimos a Bulbasur y comprobamos que se ha creado el Objeto con los valores introducidos.
 Para la **clase Pokédex**, se ha creado una Pokédex de los 3 pokemon y luego se comprueba que se ha generado el array con los 3 pokemon.
-Finalmente, se comprueba que se crea la** clase combat** a partir de dos pokemon.
+Finalmente, se comprueba que se crea la **clase combat** a partir de dos pokemon.
 
 ![Imagen 7 del test de la clases por consola](./assets/images/ejer1specconsola.png)
 
 ## Ejercicio 2 - Conecta 4
 
+Para el desarrollo de **Conecta 4** se ha optado por usar 4 clases ```clase Rejilla()``` ```clase Jugador1()``` ```clase Jugador2()``` ```clase Conecta4()```.
+La clase ```clase Rejilla()``` contiene un *array* de *arrays* de *strings*, lo que forma una **matriz** nxm (en este caso se ha rellenado de '0' y su tamaño es estrictamente 6x7). Cuenta con 2 getter, 1 setter y un método ```print()```. ```getTamano()``` devuelve el tamaño de la rejilla (42).  ```getValor(i,j)``` devuelve el valor que hay en la posición i,j. ```setValor(valor, fila, columna)``` sobreescribe el **valor** que hay en la **fila** y **columna** introducidas. ```printRejilla()``` simplemente muestra el tablero.
+
+![Imagen 1 del código del ejercicio 2](./assets/images/ejer21.PNG)
+
+```clase Jugador1()``` contiene el número de fichas de cada jugador, y el tipo de ficha 'R' que indica el color de la ficha. La clase contiene 2 getter y 2 setter.
+```getFichasN()``` devuelve las fichas que tiene el jugador 1, ```getFichasTipo()``` contiene el tipo/color de la ficha. ```setFichasN(fichasn)``` modifica el total de fichas del jugador. ```setFichasT(fichast)``` modifica el valor de la ficha del jugador.
+
+La ```clase Jugador2()``` es una clase heredada de la ```clase Jugador1()``` cuyo único cambio es el Tipo de fichas que es 'A' en este caso.
+
+![Imagen 2 del código del ejercicio 2](./assets/images/ejer22.PNG)
+
+Para que el usuario pueda introducir valores por consola se ha importado [readline](https://nodejs.org/api/readline.html), cuya variable es **rl**.
+
+![Imagen 3 del código del ejercicio 2](./assets/images/ejer23.PNG)
+
+La ```clase Conecta4()``` recibe los jugadores 1 y 2 y la Rejilla en la que se va a jugar. Contiene 2 métodos ```comprobar()``` y ```start()```.
+```comprobar()``` recorre la rejilla y busca los valores de las fichas para cada jugador y cada vez que se mete una ficha, comprueba los valores de 'R' y 'A': 
+- **Horizontalmente** si las fichas en orden horizontal i - 1/2/3, j tienen el mismo valor de la ficha, lo que quiere decir que hay 4 seguidas y por tanto hay un ganador.
+- **Verticalmente** si las fichas en orden ascendente i, j + 1/2/3 tienen el mismo valor de la ficha, lo que quiere decir que hay 4 seguidas y por tanto hay un ganador.
+- **Diagonalmente** si las fichas en sentido diagonal i + 1/2/3, j + 1/2/3 tienen el mismo valor de la ficha, lo que quiere decir que hay 4 seguidas y por tanto hay un ganador.
+- **Diagonal invertida** si las fichas en sentido diagonal inverso i - 1/2/3, j - 1/2/3 tienen el mismo valor de la ficha, lo que quiere decir que hay 4 seguidas y por tanto hay un ganador.
+
+Cuando una de las condiciones se cumple, se hace un ```rl.close()``` lo que finaliza la lectura de consola.
+
+![Imagen 4 del código del ejercicio 2](./assets/images/ejer24.PNG)
+
+```start()``` da comienzo al juego. contiene 8 contadores, uno para los **turnos** y 7 para las **filas** y **columnas**. Lo primero que hace es mostrar el turno actual (1) y turno del jugador 1 como primera vez, luego empieza a leer por consola los **answer** del jugador. Si el turno es **impar** juega el jugador 1 y si es **par** le toca al jugador2. Se introduce la ficha en la columna deseada y se recorta el valor de la fila para no sobreescribir el resultado. En el caso de que la fila sea 0, simplemente la muestra. 
+
+![Imagen 5 del código del ejercicio 2](./assets/images/ejer25.PNG)
+
+Se le suma 1 al valor de **turno** y se realiza la comprobación de si hay algún ganador, luego muestra el turno actual y continúa con la ejecución. En el caso de que el turno sea el 42 (rejilla llena) se crea una nueva y se resetea el valor de turno a 1. 
+Con ```rl.prompt()``` seguimos pidiendo valores al usuario. Finalmente, fuera de las clases se crean los objetos y se inicia el juego.
+
+![Imagen 6 del código del ejercicio 2](./assets/images/ejer26.PNG)
+
+![Imagen 7 del código del ejercicio 2](./assets/images/ejer2consola1.PNG)
+
+*Imagen de Ganador en Horizontal*
+
+![Imagen 8 del código del ejercicio 2](./assets/images/ejer2consola2.PNG)
+
+*Imagen de Ganador en Vertical*
+
+![Imagen 9 del código del ejercicio 2](./assets/images/ejer2consola3.PNG)
+
+*Imagen de Ganador en Diagonal*
+
+![Imagen 10 del código del ejercicio 2](./assets/images/ejer2consola4.PNG)
+
+*Imagen de Ganador en Diagonal Inversa*
+
 ## Ejercicio 2 tests - Conecta 4
+
+Para los test, se ha comprobado que las clases almacenan correctamente los datos y clases.
+
+![Imagen 1 del test](./assets/images/ejercicio2spec.png)
+
+![Imagen 2 del test](./assets/images/ejercicio2specconsola.png)
+
+*Imagen de Test*
