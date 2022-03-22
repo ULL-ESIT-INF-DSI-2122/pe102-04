@@ -42,47 +42,74 @@ export abstract class PrintableCollection<T> implements Collectable<T>, Printabl
     this.items.push(newItem);
   }
   /**
-   * Método
-   * @param searchTerm 
+   * Método getItems()
+   * @param searchTerm busca término
    */
   abstract getItems(searchTerm: string): T[];
-
+  /**
+   * Método removeItem()
+   * @param searchTerm busca item a eliminar
+   */
   removeItem(searchTerm: number){
     this.items.splice(searchTerm, 1);
   }
-
+  /**
+   * getNumberOfItems()
+   * @returns numero de elementos de la lista
+   */
   getNumberOfItems() {
     return this.items.length;
   }
-
+  /**
+   * print() Imprime los elementos Figure
+   */
   print(){
     this.items.forEach((item) => {
       console.log(`${item}, `);
     });
   }
 }
+/**
+ * Clase abstracta NumericPrintableCollection
+ */
 export abstract class NumericPrintableCollection<T extends PrintableCollection<T>> {
   constructor(protected figures: T[]) {}
+  /**
+   * Imprime colección de numeric
+   */
   print(){
     this.figures.forEach((figure) => {
       console.log(`[${figure}], `);
     });
   }
 }
-
+/**
+ * Clase CollectionN
+ */
 export class CollectionN extends NumericPrintableCollection<any> {
   constructor(private items: number[]) {
     super(items);
   }
 }
-
+/**
+ * Clase StringPrintableCollection
+ */
 export class StringPrintableCollection extends PrintableCollection<any> {
   constructor(protected items: string[]) {
     super(items);
   }
+  /**
+   * Metodo getItems()
+   * @param searchTerm bucar item 
+   * @returns el item como array
+   */
   getItems(searchTerm: string): string[]{
     return [searchTerm];
   };
+  /**
+   * Metodo print()
+   * @returns cadenas concatenadas
+   */
   print(){
     let aux1: string = '';
     let aux: string[] =[];
