@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Practica 6
 =======
 # Práctica 5 - Objetos, clases e interfaces
@@ -127,3 +128,6 @@ Para los test, se ha comprobado que las clases almacenan correctamente los datos
 
 *Imagen de Test*
 >>>>>>> da39d14910cf7698d40ca4b3e90675bf32df5ba4
+=======
+# Informe práctica 6 
+>>>>>>> 9d6d0d7eebd97cdb2a8b62e7ff3ce69952686ffe
