@@ -281,7 +281,7 @@ export class Combat {
       if(this.fighter1.getTipo() === 'saiyan' && this.fighter2.getTipo() === 'villano'){
         efectividad = 20;
       }
-      else if(this.fighter1.getTipo() === 'villano' && this.fighter2.getTipo() === 'saiyan'){
+      if(this.fighter1.getTipo() === 'villano' && this.fighter2.getTipo() === 'saiyan'){
         efectividad = 5;
       }
     } 
@@ -290,7 +290,7 @@ export class Combat {
       if(this.fighter1.getTipo() === 'heroe' && this.fighter2.getTipo() === 'villano'){
         efectividad = 5;
       }
-      else if(this.fighter1.getTipo() === 'villano' && this.fighter2.getTipo() === 'heroe'){
+      if(this.fighter1.getTipo() === 'villano' && this.fighter2.getTipo() === 'heroe'){
         efectividad = 1;
       }
     } 
@@ -299,7 +299,7 @@ export class Combat {
       if(this.fighter1.getTipo() === 'heroe' && this.fighter2.getTipo() === 'villano'){
         efectividad = 5;
       }
-      else if(this.fighter1.getTipo() === 'villano' && this.fighter2.getTipo() === 'heroe'){
+      if(this.fighter1.getTipo() === 'villano' && this.fighter2.getTipo() === 'heroe'){
         efectividad = 1;
       }
     } 
@@ -308,7 +308,7 @@ export class Combat {
       if(this.fighter1.getTipo() === 'yedi' && this.fighter2.getTipo() === 'sith'){
         efectividad = 3;
       }
-      else if(this.fighter1.getTipo() === 'sith' && this.fighter2.getTipo() === 'yedi'){
+      if(this.fighter1.getTipo() === 'sith' && this.fighter2.getTipo() === 'yedi'){
         efectividad = 2;
       }
     } 
@@ -361,7 +361,7 @@ export class Combat {
       if(this.fighter2.getTipo() === 'saiyan' && this.fighter1.getTipo() === 'villano'){
         efectividad = 20;
       }
-      else if(this.fighter2.getTipo() === 'villano' && this.fighter1.getTipo() === 'saiyan'){
+      if(this.fighter2.getTipo() === 'villano' && this.fighter1.getTipo() === 'saiyan'){
         efectividad = 5;
       }
     } 
@@ -369,7 +369,7 @@ export class Combat {
       if(this.fighter2.getTipo() === 'heroe' && this.fighter1.getTipo() === 'villano'){
         efectividad = 20;
       }
-      else if(this.fighter2.getTipo() === 'villano' && this.fighter1.getTipo() === 'heroe'){
+      if(this.fighter2.getTipo() === 'villano' && this.fighter1.getTipo() === 'heroe'){
         efectividad = 5;
       }
     } 
@@ -377,7 +377,7 @@ export class Combat {
       if(this.fighter2.getTipo() === 'heroe' && this.fighter1.getTipo() === 'villano'){
         efectividad = 20;
       }
-      else if(this.fighter2.getTipo() === 'villano' && this.fighter1.getTipo() === 'heroe'){
+      if(this.fighter2.getTipo() === 'villano' && this.fighter1.getTipo() === 'heroe'){
         efectividad = 5;
       }
     } 
@@ -385,7 +385,7 @@ export class Combat {
       if(this.fighter2.getTipo() === 'yedi' && this.fighter1.getTipo() === 'sith'){
         efectividad = 20;
       }
-      else if(this.fighter2.getTipo() === 'sith' && this.fighter1.getTipo() === 'yedi'){
+      if(this.fighter2.getTipo() === 'sith' && this.fighter1.getTipo() === 'yedi'){
         efectividad = 5;
       }
     } 
@@ -494,8 +494,26 @@ let joker = new DC('Joker', [70, 1.8], 'villano', [200, 150, 150, 100], 'JAJAJAJ
 
 export let pokedexCompl = new Pokedex([pkmn1, goku, freezer, spiderman, drOctopus, yoda, darthVader, superman, joker])
 
-export let comb = new Combat(spiderman, superman);
-//comb.start();
+export let comb = new Combat(pkmn4, pkmn7);
+export let comb2 = new Combat(goku, pkmn7);
+export let comb3 = new Combat(pkmn4, freezer);
+export let comb4 = new Combat(pkmn1, pkmn7);
+export let comb5 = new Combat(pkmn1, pkmn4);
+export let comb6 = new Combat(spiderman, drOctopus);
+export let comb7 = new Combat(yoda, darthVader);
+export let comb8 = new Combat(superman, joker);
+
+comb.start();
+comb2.start();
+comb3.start();
+comb4.start();
+comb5.start();
+comb6.start();
+comb7.start();
+comb8.start();
+
+
 export let ipokedexCompl = new PrintPokedex(pokedexCompl);
-//ipokedexCompl.print();
+ipokedexCompl.print();
+
 //[HP, AT, DEF, SP]
