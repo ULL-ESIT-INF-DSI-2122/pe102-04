@@ -75,5 +75,51 @@ Para los **test**, se han comprobado todas las funcionalidades del código.
 
 Resultado del **Coverage**:
 
-![Coverage](./assets/images/ejer1coverage.png)
+![Coverage 1](./assets/images/ejer1coverage.png)
 
+## Ejercicio 3 - El cifrado indescifrable
+
+El ejercicio 3, consta de 2 clases, ```Alfabeto()``` y ```Cifrado()```.
+
+La primera cuenta con un **constructor** que por defecto que contiene las letras del abecedario español.
+
+Tiene los siguientes métodos:
+- ```getAlfabeto()``` devuelve el contenido del alfabeto entero.
+- ```getTam()``` retorna el tamaño del alfabeto
+- ```getElemento(i)``` retorna el elemento en la posicion i del alfabeto
+- ```getPosicion(s)``` retorna la posicion del caracter con el metodo search
+- ```setAlfabeto(a)``` introduce un nuevo alfabeto
+
+![Clase Alfabeto](./assets/images/ejer31.png)
+
+La segunda clase, tiene dos métodos ```codificacion()``` y ```descodificacion()```.
+Codificación cuenta con un *auxiliar* que será la cadena **cifrado** que imprima por consola el mensaje codificado y otro *auxiliar* d en el que calcularemos las posiciones de las letras. Lo primero es comprobar que el tamaño de ambos *strings* sea igual, por ello, si la clave es menor, se concatenan sus elementos hasta llegar al tamaño del mensaje. Como podemos comprobar en el guión de la práctica: "HOLAESTOESUNAPRUEBA" es el **mensaje** y "CLAVECLAVECLAVECLAV" la **clave**.
+A continuación realizamos un bucle que recorre cada elemento del **mensaje** y almacena en **d** la posición de todos los elementos de la clave + 1 y se lo suma a la posicion del alfabeto + 1 (los + 1 son porque en caso de que la posición sea la 0, no se desplazaría ningún elemento luego). En el caso de que el valor de la **d** sea superior al del **alfabeto**, se hace su **módulo** (d = d%tamañoAlfabeto). Una vez calculadas todas las posiciones desplazadas, se escriben en el auxiliar restándole 1 posición a **d** (ya que las posiciones se calculan desde 0 y por tanto, ahora están desplazados un lugar más).
+
+El método ```descodificacion()``` contiene prácticamente lo mismo, sin embargo hay unas pequeñas diferencias. Tiene 2 auxiliares, **descifrado** que imprime el valor del mensaje descifrado y **d** que contiene en este caso la resta de la posición de la letra en el alfabeto + 1 menos la posición de la letra de la clave + 1. Que es la necesaria para hacer el proceso inverso. La otra diferencia es que el valor de **d** no va a ser mayor que el tamaño del **alfabeto**, sino que puede dar negativo al tratarse de una resta. Para solventar este problema, se suma al valor de la resta en caso de ser negativo el tamaño del **alfabeto** para que de su auténtico valor a encontrar. Finalmente en **descifrado** se colocan las palabras una a una del mensaje **decodificado**.
+
+![Clase Cifrado](./assets/images/ejer32.png)
+
+Como último punto, los mensajes y claves se recogen por consola al usuario, para ello esta vez se ha realizado con **scanf()** y los mensajes y claves introducidas se han puesto en mayúsculas con ```toUpperCase()``` después de introducirlas para evitar fallos a la hora de buscar las coincidencias.
+
+![Variables](./assets/images/ejer33.png)
+
+![Codificacion](./assets/images/ejer3consola1.png)
+
+*Imagen de mensaje codificado por pantalla*
+
+![Decodificacion](./assets/images/ejer3consola2.png)
+
+*Imagen de mensaje descodificado por pantalla*
+
+## Ejercicio 3 - El cifrado indescifrable (test)
+
+En los test se han realizado las comprobaciones de las clases, así como sus métodos.
+
+![Tests ejer 3](./assets/images/ejer3spec.png)
+
+![Tests ejer 3 por consola](./assets/images/ejer3specconsola.png)
+
+## Ejercicio 3 - El cifrado indescifrable (coverage)
+
+![Coverage 3](./assets/images/ejer3coverage.png)
