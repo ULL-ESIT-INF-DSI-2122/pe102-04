@@ -77,6 +77,77 @@ Resultado del **Coverage**:
 
 ![Coverage 1](./assets/images/ejer1coverage.png)
 
+
+## Ejercicio 2 - DSIflix
+
+Este ejercicio consta de 1 **interfaz**, 1 **clase abstracta**, 3 **clases heredadas** de la abstracta y 3 **clases**;
+
+- ```interface Streameable<T>```
+- ```abstract class BasicStreameableCollection<T> implements Streameable<T>```
+- ```class Series()```
+- ```class Peliculas()```
+- ```class Documentales()```
+- ```class CollectionSeries() extends BasicStreameableCollection<Series>```
+- ```class CollectionPeliculas() extends BasicStreameableCollection<Peliculas>```
+- ```class CollectionDocumentales() extends BasicStreameableCollection<Documentales>```
+
+La interfaz contiene los métodos: 
+
+1. ```add()``` inserta un nuevo objeto de tipo T.
+2. ```getName()``` recibe el nombre del objeto.
+3. ```getAge()``` recibe el año del objeto.
+
+La clase abstracta consta de:
+
+1. ```add()``` añade un objeto de tipo T en el *array* de **colecciones**.
+2. ```abstract getName()``` todas sus clases hijo tienen que implementar este método.
+3. ```abstract getAge()``` todas sus clases hijo tienen que implementar este método.
+4. ```abstract getTipo()``` todoa sus clases hijo tienen que implementar este método.
+
+![Interfaz y clase abstracta](./assets/images/ejer21.png)
+
+Las clases tienen los métodos ```getName()``` y ```getAge()``` en común, que devuelven el valor del nombre y fecha de los objetos creados, respectivamente. Además se han añadido otros métodos:
+
+![Clases Series y Peliculas](./assets/images/ejer22.png)
+
+- ```getCapitulos()``` para la clase ```class Series()```, que muestra los capitulos de la serie.
+- ```getProtagonista()``` para la clase ```class Peliculas()```, que dice quién es el protagonista de la película.
+- ```getGenero()``` para la clase ```class Documentales()```, que muestra el género del documental.
+
+![Clase Documental](./assets/images/ejer23.png)
+
+Las subclases ```Collection...()``` tienen los métodos:
+1. ```getName()``` recibe el nombre del objeto y devuelve el **auxiliar** de *arrays* de **Series/Películas/Documentales**. Es decir, recibe un nombre a buscar y si coincide la búsqueda, devuelve una lista con los objetos que tienen ese nombre.
+2. ```getAge()``` recibe el **año** del objeto y devuelve una lista con las **Series/Películas/Documentales** de ese año.
+
+![Clase heredada 1](./assets/images/ejer24.png)
+
+![Clase heredada 2](./assets/images/ejer25.png)
+
+![Clase heredada 3](./assets/images/ejer26.png)
+
+A continuación se realiza una búsqueda de series del año **1990**, series cuyo nombre sea **Dragon Ball**. Películas con el nombre de **Indiana Jones** y año **1990**. Documentales del **92** y documentales con nombre **Extreme Hunting**.
+
+![Ejemplo Consola](./assets/images/ejer2consola.png)
+
+
+## Ejercicio 2 - DSIflix (test)
+
+Para los test se han analizado que las clases se creen correctamente y cada uno de sus métodos:
+
+![Test ejercicio2](./assets/images/ejer2spec.png)
+
+![Test ejercicio2](./assets/images/ejer2specconsola.png)
+
+*Imagen con el spec del ejercicio 2*
+
+## Ejercicio 2 - DSIflix (coverage final)
+
+Resultado final del coverage:
+
+![Coverage final](./assets/images/ejer2coverage.png)
+
+
 ## Ejercicio 3 - El cifrado indescifrable
 
 El ejercicio 3, consta de 2 clases, ```Alfabeto()``` y ```Cifrado()```.
