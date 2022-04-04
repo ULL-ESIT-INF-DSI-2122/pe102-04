@@ -19,12 +19,20 @@ describe('add function tests', () => {
   });
 });
 
+const mySolver = new Solver([3, 1, 2], new BubbleSort([3, 1, 2]));
 let test1: BubbleSort = new BubbleSort([4,3,2,1]);
 let test2: MergeSort = new MergeSort([4,2,1,3]);
 let test3: BubbleSort = new BubbleSort([9,6,3,2,5]);
 let test4: MergeSort = new MergeSort([5,3,6,1,2]);
 
 describe('modi tests', () => {
+
+  it('Solver Tests', () => {
+    expect(mySolver instanceof Solver).to.be.equal(true);
+    expect(mySolver.logic()).not.to.be.equal(null);
+    expect(mySolver.setStrategy(test1)).not.to.be.equal(null);
+  });
+
   it('BubbleSort Tests', () => {
     expect(test1 instanceof BubbleSort).to.be.equal(true);
     expect(test1.execute()).to.eql([1,2,3,4]);
