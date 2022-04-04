@@ -1,6 +1,9 @@
 {
   "entryPoints": [
-    "./src/modi.ts"
+    "./src/modi.ts",
+    "./src/solver.ts",
+    "./src/bubblesort.ts",
+    "./src/mergesort.ts"
   ],
   "out": "./docs"
 }
