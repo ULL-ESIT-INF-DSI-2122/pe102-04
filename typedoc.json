@@ -3,7 +3,8 @@
     "./src/modi.ts",
     "./src/solver.ts",
     "./src/bubblesort.ts",
-    "./src/mergesort.ts"
+    "./src/mergesort.ts",
+    "./src/modi2.ts"
   ],
   "out": "./docs"
 }
